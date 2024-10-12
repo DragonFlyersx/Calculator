@@ -5,7 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Calculator"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Calculator" Height="450" Width="800" Background="WhiteSmoke" WindowStartupLocation="CenterScreen"
+        Icon="/assets/calculator_logo.png"> 
         
         <Window.Resources>
                 <Style TargetType="Button">
@@ -16,6 +17,7 @@
         </Window.Resources>
         
         <StackPanel>
+                <Border Height="50"/>
                 <Label Name="Screen" Content="Screen" HorizontalAlignment="Center" 
                        VerticalAlignment="Top" FontSize="16" Background="Gray"/>
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">

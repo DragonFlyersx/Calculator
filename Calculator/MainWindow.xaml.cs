@@ -11,9 +11,16 @@ using System.Windows.Shapes;
 
 namespace Calculator;
 
-/// <summary>
-/// Interaction logic for MainWindow.xaml
-/// </summary>
+// To do optimize layout
+
+// Add Minus and fix button layout
+// add arithmetic with ,
+// Handle multipleo operators
+// Handle divide with 0
+// Handle Keyboard input
+// Optimize code layout
+// Create a method for the calculator
+
 public partial class MainWindow : Window
 {
     private string _input = string.Empty;
