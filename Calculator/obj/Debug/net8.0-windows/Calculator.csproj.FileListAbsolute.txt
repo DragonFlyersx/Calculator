@@ -18,3 +18,4 @@ C:\Users\mathi\RiderProjects\Calculator\Calculator\obj\Debug\net8.0-windows\refi
 C:\Users\mathi\RiderProjects\Calculator\Calculator\obj\Debug\net8.0-windows\Calculator.pdb
 C:\Users\mathi\RiderProjects\Calculator\Calculator\obj\Debug\net8.0-windows\Calculator.genruntimeconfig.cache
 C:\Users\mathi\RiderProjects\Calculator\Calculator\obj\Debug\net8.0-windows\ref\Calculator.dll
+C:\Users\mathi\RiderProjects\Calculator\Calculator\obj\Debug\net8.0-windows\Calculator.sourcelink.json

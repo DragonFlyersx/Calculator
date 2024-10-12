@@ -79,8 +79,36 @@ public partial class MainWindow : Window
         _input += "0";
         Screen.Content = _input;
     }
+    private void MyButtoncomma_Click(object sender, RoutedEventArgs e)
+    {
+        _input += ",";
+        Screen.Content = _input;
+    }
+    private void MyButtontimes_Click(object sender, RoutedEventArgs e)
+    {
+        _input += "*";
+        Screen.Content = _input;
+    }
+    private void MyButtondivide_Click(object sender, RoutedEventArgs e)
+    {
+        _input += "/";
+        Screen.Content = _input;
+    }
+    private void MyButtonplus_Click(object sender, RoutedEventArgs e)
+    {
+        _input += "+";
+        Screen.Content = _input;
+    }
     private void MyButtonequal_Click(object sender, RoutedEventArgs e)
     {
+        var result = 0;
+        var numbers = _input.Split('+');
+        foreach (var number in numbers)
+        {
+            result += int.Parse(number);
+        }
+        _input = result.ToString();
+        Screen.Content = result;
         // split the string according to the operator
     }
 }

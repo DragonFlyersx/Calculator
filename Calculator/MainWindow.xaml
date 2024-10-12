@@ -6,43 +6,41 @@
         xmlns:local="clr-namespace:Calculator"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    
-  <!--  <StackPanel>
-        <Button Name="MyButton" Content="Click Me" Width="100" Height="50" 
-                HorizontalAlignment="Center" VerticalAlignment="Center" Click="MyButton_Click"/>
-       
         
-        <Button Name="Button2" Content="Reset" Width="180" Height="50"
-                HorizontalAlignment="Center" VerticalAlignment="Bottom" Click="MyButton2_Click"/>
+        <Window.Resources>
+                <Style TargetType="Button">
+                        <Setter Property="Background" Value="Gainsboro"/>
+                        <Setter Property="FontSize" Value="16"/>
+                        <Setter Property="FontWeight" Value="Bold"/>
+                </Style>
+        </Window.Resources>
         
-        <Button Name="Button3" Content="Reset" Width="180" Height="50"
-                HorizontalAlignment="Center" VerticalAlignment="Bottom"/>
-        
-        <Label Name="Screen" Content="My Calculator" HorizontalAlignment="Center" 
-               VerticalAlignment="Top" FontSize="16"/>
-    </StackPanel> -->
         <StackPanel>
                 <Label Name="Screen" Content="Screen" HorizontalAlignment="Center" 
-                       VerticalAlignment="Top" FontSize="16" Background="BlanchedAlmond"/>
+                       VerticalAlignment="Top" FontSize="16" Background="Gray"/>
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
                         <Button Name="Button7" Content="7" Width="100" Height="50" Margin="5" Click="MyButton7_Click"/>
                         <Button Name="Button8" Content="8" Width="100" Height="50" Margin="5" Click="MyButton8_Click"/>
                         <Button Name="Button9" Content="9" Width="100" Height="50" Margin="5" Click="MyButton9_Click"/>
+                        <Button Name="ButtonTimes" Content="*" Width="100" Height="50" Margin="5" Click="MyButtontimes_Click"/>
                 </StackPanel> 
                         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
                         <Button Name="Button4" Content="4" Width="100" Height="50" Margin="5" Click="MyButton4_Click"/>
                         <Button Name="Button5" Content="5" Width="100" Height="50" Margin="5" Click="MyButton5_Click"/>
                         <Button Name="Button6" Content="6" Width="100" Height="50" Margin="5" Click="MyButton6_Click"/>
+                        <Button Name="ButtonDivide" Content="/" Width="100" Height="50" Margin="5" Click="MyButtondivide_Click"/>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
                         <Button Name="Button1" Content="1" Width="100" Height="50" Margin="5" Click="MyButton1_Click"/>
                         <Button Name="Button2" Content="2" Width="100" Height="50" Margin="5" Click="MyButton2_Click"/>
                         <Button Name="Button3" Content="3" Width="100" Height="50" Margin="5" Click="MyButton3_Click"/>
+                        <Button Name="ButtonPlus" Content="+" Width="100" Height="50" Margin="5" Click="MyButtonplus_Click"/>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
                         <Button Name="ButtonCe" Content="CE" Width="100" Height="50" Margin="5" Click="MyButtonCE_Click"/>
                         <Button Name="Button0" Content="0" Width="100" Height="50" Margin="5" Click="MyButton0_Click"/>
-                        <Button Name="Buttonsequal" Content="=" Width="100" Height="50" Margin="5" Click="MyButtonequal_Click"/>
+                        <Button Name="ButtonsComma" Content="," Width="100" Height="50" Margin="5" Click="MyButtoncomma_Click"/>
+                        <Button Name="Buttonsequal" Content="=" Width="100" Height="50" Margin="5" Click="MyButtonequal_Click" Background="CornflowerBlue"/>
                         </StackPanel>
                 </StackPanel>
 </Window>
