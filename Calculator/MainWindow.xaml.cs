@@ -102,13 +102,32 @@ public partial class MainWindow : Window
     private void MyButtonequal_Click(object sender, RoutedEventArgs e)
     {
         var result = 0;
-        var numbers = _input.Split('+');
-        foreach (var number in numbers)
+        if (_input.Contains("*"))
         {
-            result += int.Parse(number);
+            var numbers = _input.Split('*');
+            result = int.Parse(numbers[0]) * int.Parse(numbers[1]);
+        }
+        else if (_input.Contains("/"))
+        {
+            var numbers = _input.Split('/');
+            result = int.Parse(numbers[0]) / int.Parse(numbers[1]);
+        }
+        else if (_input.Contains("+"))
+        {
+            var numbers = _input.Split('+');
+            foreach (var number in numbers)
+            {
+                result += int.Parse(number);
+            }
+        }
+        else if (_input.Contains("-"))
+        {
+            var numbers = _input.Split('-');
+            result = int.Parse(numbers[0]) - int.Parse(numbers[1]);
         }
         _input = result.ToString();
         Screen.Content = result;
         // split the string according to the operator
     }
+    
 }
