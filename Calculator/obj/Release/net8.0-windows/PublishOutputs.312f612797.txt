@@ -1,0 +1,5 @@
+C:\Users\mathi\RiderProjects\Calculator\Calculator\bin\Release\net8.0-windows\publish\Calculator.exe
+C:\Users\mathi\RiderProjects\Calculator\Calculator\bin\Release\net8.0-windows\publish\Calculator.dll
+C:\Users\mathi\RiderProjects\Calculator\Calculator\bin\Release\net8.0-windows\publish\Calculator.deps.json
+C:\Users\mathi\RiderProjects\Calculator\Calculator\bin\Release\net8.0-windows\publish\Calculator.runtimeconfig.json
+C:\Users\mathi\RiderProjects\Calculator\Calculator\bin\Release\net8.0-windows\publish\Calculator.pdb
