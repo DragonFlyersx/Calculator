@@ -8,14 +8,15 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System;
+using System.Data;
+
 
 namespace Calculator;
 
-// Handle multipleo operators
-// Handle divide with 0
+// Handle divide with 0<
 // Handle Keyboard input
 // Optimize code layout
-// Create a method for the calculator
 // write xunit test.
 
 public partial class MainWindow : Window
@@ -46,68 +47,15 @@ public partial class MainWindow : Window
             }
             else if (buttoncontent == "=")
             {
-                if (_input.Contains(","))
+                try
                 {
-                    var float_result = 0.0;
-                    
-                    if (_input.Contains("*"))
-                    {
-                        var numbers = _input.Split('*');
-                        float_result = double.Parse(numbers[0]) * double.Parse(numbers[1]);
-                    }
-                    
-                    else if (_input.Contains("/"))
-                    {
-                        var numbers = _input.Split('/');
-                        float_result = double.Parse(numbers[0]) / double.Parse(numbers[1]);
-                    }
-                    else if (_input.Contains("+"))
-                    {
-                        var numbers = _input.Split('+');
-                        foreach (var number in numbers)
-                        {
-                            float_result += double.Parse(number);
-                        }
-                    }
-                    else if (_input.Contains("-"))
-                    {
-                        var numbers = _input.Split('-');
-                        float_result = double.Parse(numbers[0]) - double.Parse(numbers[1]);
-                    }
-                    _input = float_result.ToString();
-                    Screen.Content = float_result;
-                    return;
-                }
-                else
-                {
-                    var result = 0;
-                    if (_input.Contains("*"))
-                    {
-                        var numbers = _input.Split('*');
-                        result = int.Parse(numbers[0]) * int.Parse(numbers[1]);
-                    }
-                    else if (_input.Contains("/"))
-                    {
-                        var numbers = _input.Split('/');
-                        result = int.Parse(numbers[0]) / int.Parse(numbers[1]);
-                    }
-                    else if (_input.Contains("+"))
-                    {
-                        var numbers = _input.Split('+');
-                        foreach (var number in numbers)
-                        {
-                            result += int.Parse(number);
-                        }
-                    }
-                    else if (_input.Contains("-"))
-                    {
-                        var numbers = _input.Split('-');
-                        result = int.Parse(numbers[0]) - int.Parse(numbers[1]);
-                    }
+                    var result = Calculate(_input);
                     _input = result.ToString();
                     Screen.Content = result;
-                    return;
-                    
+                }
+                catch (Exception)
+                {
+                    Screen.Content = "Error";
                 }
               
             }
@@ -118,12 +66,12 @@ public partial class MainWindow : Window
 
             Screen.Content = _input;
         }
-        
-        
     }
-    private void Calculate(object sender, RoutedEventArgs e)
+    private object Calculate(string assigment)
     {
-        
+        var table = new DataTable();
+        var result = table.Compute(assigment, "");
+        return result;
         
     }
     
