@@ -47,8 +47,15 @@ public partial class MainWindow : Window
             }
             else if (buttoncontent == "=")
             {
+                if (_input.Contains(",,") || _input.Contains("**") || _input.Contains("//") || _input.Contains("/0"))
+                {
+                    _input = string.Empty;
+                    Screen.Content = "Error - Invalid input";
+                    return;
+                }
                 try
                 {
+                    _input.Replace(",", ".");
                     var result = Calculate(_input);
                     _input = result.ToString();
                     Screen.Content = result;
