@@ -14,10 +14,11 @@ using System.Data;
 
 namespace Calculator;
 
-// Handle divide with 0<
+// Handle multiple ,,, 
 // Handle Keyboard input
 // Optimize code layout
 // write xunit test.
+// Handle that if number gets to big it will be displayed in scientific notation
 
 public partial class MainWindow : Window
 {
@@ -47,7 +48,7 @@ public partial class MainWindow : Window
             }
             else if (buttoncontent == "=")
             {
-                if (_input.Contains(",,") || _input.Contains("**") || _input.Contains("//") || _input.Contains("/0"))
+                if (_input.Contains(",,") || _input.Contains("**") || _input.Contains("//"))
                 {
                     _input = string.Empty;
                     Screen.Content = "Error - Invalid input";
@@ -78,6 +79,11 @@ public partial class MainWindow : Window
     {
         var table = new DataTable();
         var result = table.Compute(assigment, "");
+        // handles incase division by 0
+        if (result.ToString() == "∞" || result.ToString() == "NaN")
+        {
+            return "Error invalid input";
+        }
         return result;
         
     }
