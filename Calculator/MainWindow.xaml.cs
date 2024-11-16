@@ -40,11 +40,28 @@ public partial class MainWindow : Window
             {
                 _input = string.Empty;
             }
-            else if(buttoncontent == "x\u00b2")
+            else if(buttoncontent == "x\u00b2") // need to fix if want to use this input is not a  number but a symbol
             {
-                var calc = int.Parse(_input) * int.Parse(_input);
-                _input = calc.ToString();
-                Screen.Content = _input;
+                if (_input.Length > 0)
+                {
+                    try
+                    {
+                        var number = int.Parse(_input);
+                        var calc = checked(number * number);
+                        _input = calc.ToString();
+                        Screen.Content = _input;
+                    }
+                    catch (OverflowException)
+                    {
+                        _input = string.Empty;
+                        Screen.Content = "Error - Overflow";
+                    }
+                }
+                else
+                {
+                    _input = string.Empty;
+                    Screen.Content = "Error - Invalid input";
+                }
             }
             else if (buttoncontent == "=")
             {
@@ -84,8 +101,6 @@ public partial class MainWindow : Window
         {
             return "Error invalid input";
         }
-        return result;
-        
+        return result;   
     }
-    
 }
